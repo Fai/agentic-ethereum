@@ -19,5 +19,5 @@ The project is designed to:
 
 1. Use Covalent's [AI Agent Kit](https://github.com/covalenthq/ai-agent-sdk) to create agents.
 2. Prompt Tuning and update discussion workflow to facilitate structured discussions and debates.
-3. Prepare Web3 & ZK Research Academic Papers.
+3. Prepare Web3 & ZK Research Academic Papers for testing
 4. Create Browser-based UI using Next.js to interact with agents.

@@ -91,7 +91,9 @@ const zee = new ZeeWorkflow({
 // })();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: '*',
+}));
 app.use(bodyParser.json());
 
 app.post('/api/analyze', async (req, res) => {
