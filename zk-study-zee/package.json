@@ -32,11 +32,16 @@
   "license": "MIT",
   "description": "A barebones template for creating a new ZEE application.",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "@covalenthq/ai-agent-sdk": "^0.2.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "@covalenthq/ai-agent-sdk": "^0.2.0"
+    "express": "^4.21.2"
   }
 }

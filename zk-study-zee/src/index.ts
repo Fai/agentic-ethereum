@@ -4,6 +4,10 @@ import { StateFn } from "@covalenthq/ai-agent-sdk/dist/core/state";
 import "dotenv/config";
 import { z } from "zod";
 
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+
 const fetchNews = createTool({
     id: "fetch-news",
     description: "Fetch the latest news articles about a given topic",
@@ -73,15 +77,37 @@ const zee = new ZeeWorkflow({
     agents: { researchAgent, summaryAgent },
 });
 
-(async function main() {
-    const initialState = StateFn.root(zee.description);
-    initialState.messages.push(
-        user(
-            "Analyze the latest papers about Zero Knowledge Proofs for Large Language Models"
-        )
-    );
+// (async function discuss() {
+//     const initialState = StateFn.root(zee.description);
+//     initialState.messages.push(
+//         user(
+//             "Analyze the latest papers about Zero Knowledge Proofs for Large Language Models"
+//         )
+//     );
 
-    const result = await ZeeWorkflow.run(zee, initialState);
-    console.log("\nFinal Summary:");
-    console.log(result.messages[result.messages.length - 1].content);
-})();
+//     const result = await ZeeWorkflow.run(zee, initialState);
+//     console.log("\nFinal Summary:");
+//     console.log(result.messages[result.messages.length - 1].content);
+// })();
+
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+app.post('/api/analyze', async (req, res) => {
+    const { topic } = req.body;
+    const initialState = StateFn.root(zee.description);
+    initialState.messages.push(user(`Analyze the latest papers about ${topic}`));
+
+    try {
+        const result = await ZeeWorkflow.run(zee, initialState);
+        res.json({ summary: result.messages[result.messages.length - 1].content });
+    } catch (error) {
+        res.status(500).json({ error: (error as any).message });
+    }
+});
+
+const PORT = process.env.PORT || 3400;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
