@@ -15,9 +15,8 @@ The project is designed to:
 - Offer an interactive, on-demand study tool for the Web3 community.
 
 # How It’s Made
-- AI Multi-Agent Framework: Built using function-calling and agents.
-- Discussion Orchestration: Custom logic to facilitate structured discussions and debates.
-- Web3 & ZK Research Data: Ingests academic papers for this scope (Further improving might add EIPs, GitHub repos, and blogs.)
-- Frontend: Browser-based UI (React + TypeScript) to interact with agents.
-- Backend: Python FastAPI handling agent interactions and external API integrations.
-- Ethereum & Web3: Uses smart contracts for knowledge validation
+1. Use Covalent's [AI Agent Kit](https://github.com/covalenthq/ai-agent-sdk) to create agents.
+2. Prepare Web3 & ZK Research Academic Papers.
+3. Build Discussion Orchestration on Python FastAPI to handling agent interactions and external API integrations with Custom logic to facilitate structured discussions and debates.
+4. Create Frontend: Browser-based UI using Next.js to interact with agents.
+5. (Plan) Ethereum & Web3: Uses smart contracts for knowledge validation
