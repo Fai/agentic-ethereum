@@ -1,5 +1,6 @@
 # Agentic Ethereum
 [Project Submission for Agentic Ethereum 2025](https://ethglobal.com/events/agents/)
+
 AI Experiment using multi-agents to autonomously discuss, analyze, and generate insights about zero-knowledge (ZK) cryptography and Web3 protocols.
 
 # ZK Study Group AI Agents
