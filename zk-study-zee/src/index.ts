@@ -68,8 +68,8 @@ const summaryAgent = new Agent({
 });
 
 const zee = new ZeeWorkflow({
-    description: "Analyze latest technology news and create a summary report",
-    output: "A comprehensive summary of technology news trends",
+    description: "Discuss about Zero Knowledge Proof academic papers to generate Insight",
+    output: "A discussion based on papers and key insights",
     agents: { researchAgent, summaryAgent },
 });
 
@@ -77,7 +77,7 @@ const zee = new ZeeWorkflow({
     const initialState = StateFn.root(zee.description);
     initialState.messages.push(
         user(
-            "Analyze the latest news about artificial intelligence and provide a summary of key trends."
+            "Analyze the latest papers about Zero Knowledge Proofs for Large Language Models"
         )
     );
 
